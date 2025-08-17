@@ -7,7 +7,7 @@ class TestLentaOrders:
     @allure.title('Открыть заказ на просмотр')
     def test_go_to_lenta_orders(self, menu_page, lenta_orders_page):
         menu_page.open_page_by_lenta_orders() 
-        assert lenta_orders_page.open_modal_about_orders() == True
+        assert lenta_orders_page.open_modal_about_orders()
 
     @allure.title('Проверка отображения заказа пользователя в ленте заказов')
     def test_create_order(self, auth_user, menu_page, lenta_orders_page, konstruktor_page):

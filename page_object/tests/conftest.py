@@ -5,7 +5,8 @@ from pages.menu_page import MenuPage
 from pages.account_page import AccountPage
 from pages.lenta_orders_page import LentaOrdersPage
 from pages.konstruktor_page import KonstruktorPage
-from data import URL, URL_LOGIN
+from data import BASE_URL, URL_LOGIN
+from helpers import GenUser
 
 
 @pytest.fixture(params=["chrome", "firefox"], scope="function")
@@ -25,7 +26,7 @@ def auth_methods():
 
 @pytest.fixture
 def menu_page(driver):
-    driver.get(URL)
+    driver.get(BASE_URL)
     return MenuPage(driver)
 
 @pytest.fixture
@@ -38,15 +39,16 @@ def lenta_orders_page(driver):
 
 @pytest.fixture
 def konstruktor_page(driver):
-    driver.get(URL)
+    driver.get(BASE_URL)
     return KonstruktorPage(driver)
 
 # Генерация рандомного email, пароля и имени
 @pytest.fixture
-def gen_email_password_name(auth_methods):
-    email = f"{auth_methods.generate_random_string(10)}@yandex.ru"
-    password = auth_methods.generate_random_string(10)
-    name = auth_methods.generate_random_string(10)
+def gen_email_password_name():
+    gen = GenUser()
+    email = f"{gen.generate_random_string(10)}@yandex.ru"
+    password = gen.generate_random_string(10)
+    name = gen.generate_random_string(10)
     return email, password, name
 
 # Создать нового пользователя

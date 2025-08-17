@@ -14,4 +14,5 @@ class AccountLocators:
     TITLE_FORGOT_PASSWORD = [By.XPATH, "//h2[text()='Восстановление пароля']"]
     BUTTON_FORGOT_PASSWORD = [By.XPATH, "//button[text()='Восстановить']"]
     ACTIVE_FORM_PASSWORD = [By.XPATH, "//label[text()='Пароль']/parent::div"]
+    BUTTON_CREATE_ORDER = [By.XPATH, "//button[text()='Оформить заказ']"]
 

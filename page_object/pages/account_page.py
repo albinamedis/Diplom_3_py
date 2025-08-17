@@ -2,17 +2,16 @@ import pytest
 import allure
 from pages.base_page import BasePage
 from locators.account_locators import AccountLocators 
-from locators.konstruktor_locators import KonstruktorLocators
 
 
 class AccountPage(BasePage):
 
-    @allure.step("Выполнить авторизауию по логину и паролю")
+    @allure.step("Выполнить авторизацию по логину и паролю")
     def sign_by_account(self, email, password):
         self.add_text_to_element(AccountLocators.EMAIL, email)
         self.add_text_to_element(AccountLocators.PASSWORD, password)
         self.click_to_element(AccountLocators.BUTTON_SIGN)
-        element = self.find_element_with_wait(KonstruktorLocators.BUTTON_CREATE_ORDER)
+        element = self.find_element_with_wait(AccountLocators.BUTTON_CREATE_ORDER)
         return element.is_displayed()
     
     @allure.step("Открыть историю заказов")

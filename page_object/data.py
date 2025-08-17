@@ -1,5 +1,4 @@
-BASE_URL = 'https://stellarburgers.nomoreparties.site/api/auth/'
-URL = 'https://stellarburgers.nomoreparties.site/'
+BASE_URL = 'https://stellarburgers.nomoreparties.site/'
 URL_LOGIN = 'https://stellarburgers.nomoreparties.site/login'
 default_text_order = '9999'
 count_ingredients = '2'
